@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="./styles.css" rel="stylesheet" type="text/css">
+    <title>Tela de Login</title>
+</head>
+<body>
+    <% if (typeof error !== 'undefined') { %>
+        <div class="alert alert-danger" role="alert"><%= error %></div>
+    <% } %>
+    <% if (typeof erroemail !== 'undefined') { %>
+        <div class="alert alert-danger" role="alert"><%= erroemail %></div>
+    <% } %>
+    <div class="grid" id="myGrid">
+        <div class="form" id="form">
+            <h1 id="h1log">Login</h1>
+            <form id="form1" action="/login" method="POST" onsubmit="return validateLogin()">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInputLogin" name="username" placeholder="name@example.com">
+                    <label for="floatingInputLogin">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPasswordLogin" name="password" placeholder="Password">
+                    <label for="floatingPasswordLogin">Password</label>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="secondcontentL">
+            <h2 id="h2logs">Bem-vindo</h2>
+            <p>Conecte-se aqui</p>
+            <p>Para ter acesso ao sistema</p>
+            <button type="button" class="btn btn-outline-primary" id="bnt1" onclick="MudarParaLogin()">Entrar</button>
+        </div>
+
+        <div class="form2">
+            <h1 id="h1reg">Registro</h1>
+            <form id="formr" action="/register" method="POST" onsubmit="return validateRegister()">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInputRegister" name="nome" placeholder="Seu nome">
+                    <label for="floatingInputRegister">Nome</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput2Register" name="email" placeholder="name@example.com">
+                    <label for="floatingInput2Register">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPasswordRegister" name="password" placeholder="Senha">
+                    <label for="floatingPasswordRegister">Senha</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword2Register" name="confirmpassword" placeholder="Confirme a senha">
+                    <label for="floatingPassword2Register">Confirmar Senha</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="secondcontentR">
+            <h2 id="h2logr">Crie uma conta</h2>
+            <p>Ainda não tem uma conta?</p>
+            <p>Crie aqui, para aproveitar o melhor de nosso sistema</p>
+            <button class="btn btn-outline-primary" type="button"  id="bnt2" onclick="MudarParaRegistro()">Registre-se</button>
+        </div>
+    </div>
+
+    <script src="./scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

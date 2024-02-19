@@ -1,0 +1,110 @@
+.grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  transition: all 2s;
+}
+
+#formr {
+  opacity: 0;
+  grid-column: 2;
+  width: 50%;
+}
+
+.form {
+  background-color: #0B5ED7;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: background 2s;
+}
+
+#h1log {
+  margin-top: 20%;
+  opacity: 1;
+  color: white;
+}
+
+#h1reg {
+  margin-top: 20%;
+  opacity: 0;
+  color: white;
+}
+
+
+#form1{
+  opacity: 1;
+  width: 50%;
+}
+
+.btn.btn-primary{
+  justify-content: center;
+  align-items: center;
+}
+
+.secondcontentL{
+  pointer-events: none; 
+  opacity: 0;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.secondcontentR{
+  opacity: 1;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#form1, #h1log, .secondcontentL, #formr, .secondcontentR, #h1reg {
+  transition: opacity 2s ease-in-out;
+}
+
+.form2{
+  background-color: white;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  pointer-events: none;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: background 2s;
+}
+
+#bnt1,  #bnt2 {
+   width: 150px;
+   border-radius: 60px;
+}
+
+#floatingPassword2Register{
+  margin-top: 15px;
+}
+
+.btn.btn-primary {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.alert.alert-danger{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
