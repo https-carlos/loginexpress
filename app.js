@@ -48,4 +48,7 @@ app.delete('/delete', (req, res) =>  {
      
     res.status(200).send('Usuário deletado');
 });
-app.listen(3000, () => console.log('Server ready'));
+
+//app.listen(3000, () => console.log('Server ready'));
+
+module.exports = app;
