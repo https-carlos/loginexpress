@@ -79,4 +79,4 @@ app.get('/logout', (req, res) => {
       res.redirect('/');
     });
   });
-app.listen(3000, () => console.log('Server ready'));
+app.listen(8080, () => console.log('Server ready'));
