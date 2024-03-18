@@ -79,4 +79,6 @@ app.get('/logout', (req, res) => {
       res.redirect('/');
     });
   });
-app.listen(8080, () => console.log('Server ready'));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Server ready on port ${port}`));
+
