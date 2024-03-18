@@ -21,7 +21,7 @@ let usuarios = [{name: 'leonardo',user: 'leonardo@gmail.com', senha: 'silva'}, {
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   }));
 
 app.post('/logado', (req, res) =>  {
@@ -30,26 +30,20 @@ app.post('/logado', (req, res) =>  {
     req.session.username = username;
     req.session.password = password;
 
-    function verificarUsuario(user, senha) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].user === user && usuarios[i].senha === senha) {
-                return res.render('logado', { name: usuarios[i].name, usuarios: usuarios});
-            }
-        }
-        res.render('index', { error: 'Falha no login.' });
-    }
-    verificarUsuario(username, password)
+    verificarUsuario(username, password, res)
 });
 
-app.get('/logado', (req, res) => {
-    // Verifica se a sessão já está iniciada
+function verificarUsuario(user, senha, res) {
     for(let i = 0; i < usuarios.length; i++) {
-        if (req.session.username) {
-            res.render('logado', { name: usuarios[i].name, usuarios: usuarios});
-            return;
+        if(usuarios[i].user === user && usuarios[i].senha === senha) {
+            return res.render('logado', { name: usuarios[i].name, usuarios: usuarios});
         }
     }
     res.render('index', { error: 'Falha no login.' });
+}
+
+app.get('/logado', (req, res) => {
+    verificarUsuario(req.session.username, req.session.password, res)
 });
 
 
