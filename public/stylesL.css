@@ -54,3 +54,21 @@ li {
     margin-top: 5px;
 }
 
+#encerrar {
+    background-color: #EFECE8;
+    width: 300px;
+    border-radius: 30px;
+    height: 50px;
+}
+
+#encerrar:hover {
+    background-color: #C6C3BD;
+    width: 300px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.botao {
+    text-align: center;
+}
+
