@@ -76,6 +76,7 @@ app.delete('/delete', (req, res) =>  {
 app.get('/logout', (req, res) => {
     // Destroi a sessão ao fazer logout
     req.session.destroy(() => {
+      res.clearCookie('connect.sid');
       res.redirect('/');
     });
   });
