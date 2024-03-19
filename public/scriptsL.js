@@ -17,7 +17,7 @@ console.log("Botão clicado com ID:", id);
       console.log("Elemento não encontrado.");
   }
 
-  fetch('http://localhost:3000/delete', {
+  fetch('/delete', {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
